@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   },
   description:
     "Het opleidings- en verdiepingscentrum van Nedanza Psychologen. Opleidingen in systemische hulpverlening, contactuele therapie en het Exodus Model.",
+  icons: {
+    icon: "/images/fav.png",
+  },
 };
 
 export default async function LocaleLayout({
