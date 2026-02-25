@@ -40,6 +40,8 @@
   },
   "footer": {
     "tagline": "Het opleidings- en verdiepingscentrum van Nedanza Psychologen",
-    "copyright": "© {year} Nedanza Academie. Alle rechten voorbehouden."
+    "copyright": "© {year} Nedanza Academie. Alle rechten voorbehouden.",
+    "madeBy": "Gemaakt door",
+    "backToTop": "Terug naar boven"
   }
 }

@@ -1,11 +1,13 @@
 "use client";
 
 import { CONTACT_INFO, NEDANZA_MAIN_SITE } from "@/lib/constants";
-import { Mail, Phone } from "lucide-react";
+import { ArrowUp, Mail, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
+  const t = useTranslations();
   const year = new Date().getFullYear();
 
   return (
@@ -23,7 +25,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-muted-foreground">
-              Het opleidings- en verdiepingscentrum van Nedanza Psychologen
+              {t("footer.tagline")}
             </p>
           </div>
 
@@ -45,10 +47,42 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-border pt-6">
-          <p className="text-center text-xs text-muted-foreground">
-            &copy; {year} Nedanza Academie. Alle rechten voorbehouden.
+        {/* Bottom Bar */}
+        <div className="mt-12 grid grid-cols-3 items-center border-t border-border pt-8">
+          <p className="text-left text-xs text-muted-foreground">
+            {t("footer.copyright", { year: year.toString() })}
           </p>
+          <div className="flex justify-center">
+            <a
+              href="https://www.jmwebsites.nl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1.5 transition-all hover:border-foreground/20 hover:bg-foreground/10"
+            >
+              <Image
+                src="/images/Footer_jmwebsitesicon/icon.svg"
+                alt="JM Websites"
+                width={18}
+                height={18}
+                className="rounded-[4px]"
+              />
+              <span className="text-xs text-muted-foreground/60">
+                {t("footer.madeBy")}{" "}
+                <span className="font-medium text-muted-foreground">
+                  JM Websites
+                </span>
+              </span>
+            </a>
+          </div>
+          <div className="flex justify-end">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1.5 text-xs text-muted-foreground transition-all hover:border-foreground/20 hover:bg-foreground/10"
+            >
+              <ArrowUp className="h-3 w-3" />
+              {t("footer.backToTop")}
+            </button>
+          </div>
         </div>
       </div>
     </footer>

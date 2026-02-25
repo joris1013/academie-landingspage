@@ -40,6 +40,8 @@
   },
   "footer": {
     "tagline": "The training and development center of Nedanza Psychologen",
-    "copyright": "© {year} Nedanza Academy. All rights reserved."
+    "copyright": "© {year} Nedanza Academy. All rights reserved.",
+    "madeBy": "Made by",
+    "backToTop": "Back to top"
   }
 }
