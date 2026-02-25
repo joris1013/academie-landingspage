@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "siteName": "Nedanza Academie",
+    "siteDescription": "Het opleidings- en verdiepingscentrum van Nedanza Psychologen"
+  },
+  "common": {
+    "readMore": "Lees meer",
+    "contactUs": "Neem contact op",
+    "backToHome": "Terug naar home",
+    "phone": "Telefoon",
+    "email": "E-mail",
+    "switchLanguage": "English",
+    "darkMode": "Donkere modus",
+    "lightMode": "Lichte modus",
+    "menu": "Menu",
+    "close": "Sluiten"
+  },
+  "academie": {
+    "title": "Academie",
+    "metaDescription": "Nedanza Academie: opleidingen en trainingen voor behandelaren in de GGZ.",
+    "intro": "De Nedanza Academie biedt opleidingen en trainingen aan voor behandelaren in de geestelijke gezondheidszorg.",
+    "courses": {
+      "title": "Opleidingen",
+      "systemicTherapy": {
+        "title": "Basiscursus Systeemtherapie (Post-Master)",
+        "description": "Een gedegen opleiding in systeemtherapie voor behandelaren die zich willen specialiseren in het werken met gezinnen en relaties."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "description": "De pagina die u zoekt bestaat niet of is verplaatst.",
+    "backHome": "Terug naar home"
+  },
+  "error": {
+    "title": "Er is iets misgegaan",
+    "description": "Er is een onverwachte fout opgetreden. Probeer het opnieuw of ga terug naar de homepagina.",
+    "retry": "Probeer opnieuw",
+    "backHome": "Terug naar home"
+  },
+  "footer": {
+    "tagline": "Het opleidings- en verdiepingscentrum van Nedanza Psychologen",
+    "copyright": "© {year} Nedanza Academie. Alle rechten voorbehouden."
+  }
+}

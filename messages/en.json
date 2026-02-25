@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "siteName": "Nedanza Academy",
+    "siteDescription": "The training and development center of Nedanza Psychologen"
+  },
+  "common": {
+    "readMore": "Read more",
+    "contactUs": "Contact us",
+    "backToHome": "Back to home",
+    "phone": "Phone",
+    "email": "Email",
+    "switchLanguage": "Nederlands",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "academie": {
+    "title": "Academy",
+    "metaDescription": "Nedanza Academy: training programs for mental healthcare practitioners.",
+    "intro": "The Nedanza Academy offers training programs for practitioners in mental healthcare.",
+    "courses": {
+      "title": "Courses",
+      "systemicTherapy": {
+        "title": "Basic Course in Systemic Therapy (Post-Master)",
+        "description": "A thorough training in systemic therapy for practitioners who want to specialize in working with families and relationships."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again or return to the homepage.",
+    "retry": "Try again",
+    "backHome": "Back to home"
+  },
+  "footer": {
+    "tagline": "The training and development center of Nedanza Psychologen",
+    "copyright": "© {year} Nedanza Academy. All rights reserved."
+  }
+}
