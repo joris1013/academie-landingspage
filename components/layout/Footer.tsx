@@ -19,7 +19,7 @@ export function Footer() {
                 alt="Nedanza Psychologen"
                 width={120}
                 height={40}
-                className="h-8 w-auto dark:brightness-0 dark:invert"
+                className="h-8 w-auto"
               />
             </Link>
             <p className="text-sm text-muted-foreground">

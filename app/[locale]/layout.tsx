@@ -4,7 +4,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/lib/i18n/routing";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -55,24 +54,16 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       className={`${inter.variable} ${playfair.variable}`}
-      suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          <NextIntlClientProvider messages={messages}>
-            <LenisProvider>
-              <Navbar />
-              <main className="min-h-screen">{children}</main>
-              <Footer />
-            </LenisProvider>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <LenisProvider>
+            <Navbar />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </LenisProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

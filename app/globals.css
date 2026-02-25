@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* Dark mode: class strategy for next-themes */
-@custom-variant dark (&:is(.dark *));
-
 /* ============================================
    THEME CONFIGURATION
    ============================================ */
@@ -141,26 +138,6 @@
     --border: 36 22% 88%;
     --input: 36 22% 88%;
     --ring: 97 18% 47%;
-  }
-
-  .dark {
-    --background: 215 28% 7%;
-    --foreground: 36 20% 92%;
-    --card: 220 25% 12%;
-    --card-foreground: 36 20% 92%;
-    --primary: 97 20% 58%;
-    --primary-foreground: 215 28% 7%;
-    --secondary: 220 20% 16%;
-    --secondary-foreground: 36 22% 85%;
-    --muted: 220 20% 16%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 36 37% 63%;
-    --accent-foreground: 215 28% 7%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 97 20% 58%;
   }
 
 }

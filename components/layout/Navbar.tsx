@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Link } from "@/lib/i18n/routing";
+import { Link, usePathname } from "@/lib/i18n/routing";
 import { NEDANZA_MAIN_SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, LogIn, Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -20,6 +19,9 @@ const ACADEMY_SECTIONS = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const sectionHref = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -45,7 +47,7 @@ export function Navbar() {
                 alt="Nedanza Academie"
                 width={140}
                 height={48}
-                className="h-10 w-auto dark:brightness-0 dark:invert"
+                className="h-10 w-auto"
                 priority
               />
             </Link>
@@ -63,7 +65,7 @@ export function Navbar() {
             {ACADEMY_SECTIONS.map((section) => (
               <a
                 key={section.id}
-                href={`#${section.id}`}
+                href={sectionHref(section.id)}
                 className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground hover:bg-secondary/50"
               >
                 {section.label}
@@ -72,7 +74,6 @@ export function Navbar() {
           </div>
 
           <div className="flex shrink-0 items-center gap-1 sm:gap-2">
-            <ThemeToggle />
             <a
               href="https://nedanza-academie.vercel.app/"
               target="_blank"
@@ -128,7 +129,7 @@ export function Navbar() {
                     {ACADEMY_SECTIONS.map((section) => (
                       <a
                         key={section.id}
-                        href={`#${section.id}`}
+                        href={sectionHref(section.id)}
                         onClick={() => setMobileOpen(false)}
                         className="block rounded-lg px-3 py-3 text-sm font-medium text-foreground hover:bg-secondary/50"
                       >

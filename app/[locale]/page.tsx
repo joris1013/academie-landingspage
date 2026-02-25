@@ -36,11 +36,19 @@ export default function AcademiePage() {
               </span>
             </div>
           </SectionReveal>
-          <TextReveal
-            text="Welkom bij de Nedanza Academie"
-            as="h1"
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
-          />
+          <div>
+            <TextReveal
+              text="Welkom bij de"
+              as="h1"
+              className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
+            />
+            <TextReveal
+              text="Nedanza Academie"
+              as="h1"
+              className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
+              delay={0.12}
+            />
+          </div>
           <SectionReveal delay={0.3}>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
               Het opleidings- en verdiepingscentrum van Nedanza Psychologen
@@ -85,46 +93,47 @@ export default function AcademiePage() {
 
           <SectionReveal delay={0.1}>
             <div className="rounded-2xl border border-primary/20 bg-primary/5 p-8 md:p-10">
-              <div className="space-y-6">
-                <p className="text-lg leading-relaxed text-muted-foreground">
-                  De Nedanza Academie is het opleidings- en verdiepingscentrum
-                  van Nedanza Psychologen. We bieden opleidingen en modules voor
-                  mensen die hun werk met anderen en hun verstaan van zichzelf
-                  willen verdiepen en verfijnen.
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  Wij gaan ervan uit dat niemand op zichzelf staat. Ieder mens
-                  is gevormd binnen relaties en verbanden zoals gezin en familie,
-                  geloof, cultuur en geschiedenis. In deze netwerken ontstaan
-                  patronen, loyaliteiten en manieren om staande te blijven.
-                  Verandering voltrekt zich daarom niet alleen via inzicht, maar
-                  in het contact zelf, in wat zich tussen mensen afstemt, schuurt,
-                  zichtbaar wordt of nog verborgen blijft. Vanuit die grondslag
-                  verbinden we systemische hulpverlening met contactueel en
-                  existentieel georiënteerd werken.
-                </p>
-              </div>
-            </div>
-          </SectionReveal>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                De Nedanza Academie is het opleidings- en verdiepingscentrum
+                van Nedanza Psychologen. We bieden opleidingen en modules voor
+                mensen die hun werk met anderen en hun verstaan van zichzelf
+                willen verdiepen en verfijnen.
+              </p>
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+                Wij gaan ervan uit dat niemand op zichzelf staat. Ieder mens
+                is gevormd binnen relaties en verbanden zoals gezin en familie,
+                geloof, cultuur en geschiedenis. In deze netwerken ontstaan
+                patronen, loyaliteiten en manieren om staande te blijven.
+                Verandering voltrekt zich daarom niet alleen via inzicht, maar
+                in het contact zelf, in wat zich tussen mensen afstemt, schuurt,
+                zichtbaar wordt of nog verborgen blijft. Vanuit die grondslag
+                verbinden we systemische hulpverlening met contactueel en
+                existentieel georiënteerd werken.
+              </p>
 
-          <SectionReveal delay={0.2}>
-            <div className="mt-8 rounded-2xl border border-border/50 bg-card p-8 md:p-10">
-              <div className="space-y-6">
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  Onze opleidingen zijn ervaringsgericht. Het eigen verhaal en de
-                  ingebrachte casuïstiek van deelnemers vormen het hart van het
-                  leerproces. We onderzoeken dynamiek en positie, nabijheid en
-                  grenzen, spreken en zwijgen. We oefenen in het waarnemen van
-                  wat zich aandient in het hier en nu, ook wanneer daar nog geen
-                  taal voor is.
-                </p>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  Leren betekent hier niet alleen kennis verwerven, maar ook
-                  jezelf ontmoeten in je manier van aanwezig zijn. Wie met
-                  mensen werkt, werkt altijd vanuit zijn eigen geschiedenis en
-                  gevoeligheid. Daarom vraagt onze manier van opleiden
-                  betrokkenheid, zelfonderzoek en gezamenlijke reflectie.
-                </p>
+              <div className="my-8 flex items-center gap-4">
+                <div className="h-px flex-1 bg-primary/15" />
+                <div className="h-1.5 w-1.5 rounded-full bg-primary/30" />
+                <div className="h-px flex-1 bg-primary/15" />
+              </div>
+
+              <p className="text-base leading-relaxed text-muted-foreground">
+                Onze opleidingen zijn ervaringsgericht. Het eigen verhaal en de
+                ingebrachte casuïstiek van deelnemers vormen het hart van het
+                leerproces. We onderzoeken dynamiek en positie, nabijheid en
+                grenzen, spreken en zwijgen. We oefenen in het waarnemen van
+                wat zich aandient in het hier en nu, ook wanneer daar nog geen
+                taal voor is.
+              </p>
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+                Leren betekent hier niet alleen kennis verwerven, maar ook
+                jezelf ontmoeten in je manier van aanwezig zijn. Wie met
+                mensen werkt, werkt altijd vanuit zijn eigen geschiedenis en
+                gevoeligheid. Daarom vraagt onze manier van opleiden
+                betrokkenheid, zelfonderzoek en gezamenlijke reflectie.
+              </p>
+
+              <div className="mt-8 border-l-2 border-primary/25 pl-6">
                 <p className="font-serif text-lg italic text-foreground/80">
                   De Nedanza Academie is een plek om te vertragen, te verdiepen
                   en te leren zien &mdash; in jezelf, in de ander en in wat zich
