@@ -75,7 +75,7 @@ export function Navbar() {
 
           <div className="flex shrink-0 items-center gap-1 sm:gap-2">
             <a
-              href="https://nedanza-academie.vercel.app/"
+              href="https://nedanza-portaal.nl/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-primary p-2 lg:px-4 lg:py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 hover:shadow-md"
@@ -140,7 +140,7 @@ export function Navbar() {
                 </div>
                 <div className="border-t border-border p-4 space-y-3">
                   <a
-                    href="https://nedanza-academie.vercel.app/"
+                    href="https://nedanza-portaal.nl/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
