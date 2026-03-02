@@ -6,9 +6,48 @@ import { CTABanner } from "@/components/shared/CTABanner";
 import { GraduationCap, ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Opleidingen",
+const BASE_URL = "https://academie.nedanza.nl";
+
+const pageMetadata: Record<string, { title: string; description: string }> = {
+  nl: {
+    title: "Opleidingen",
+    description:
+      "Bekijk het opleidingsaanbod van de Nedanza Academie: post-master systeemtherapie, het Exodus Model en contactuele therapie voor GGZ-behandelaren.",
+  },
+  en: {
+    title: "Courses",
+    description:
+      "Explore the Nedanza Academy training programs: post-master systemic therapy, the Exodus Model and contactual therapy for mental health practitioners.",
+  },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const meta = pageMetadata[locale] ?? pageMetadata.nl;
+  const localePath = locale === "nl" ? "" : `/${locale}`;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: `${meta.title} | Nedanza Academie`,
+      description: meta.description,
+      url: `${BASE_URL}${localePath}/opleidingen`,
+    },
+    alternates: {
+      canonical: `${BASE_URL}${localePath}/opleidingen`,
+      languages: {
+        nl: `${BASE_URL}/opleidingen`,
+        en: `${BASE_URL}/en/opleidingen`,
+        "x-default": `${BASE_URL}/opleidingen`,
+      },
+    },
+  };
+}
 
 export default function OpleidingenPage() {
   const t = useTranslations("academie");

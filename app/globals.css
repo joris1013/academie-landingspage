@@ -23,32 +23,32 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
-  /* Static palette: Sage Green */
-  --color-sage-50: #f6f7f4;
-  --color-sage-100: #e8ebe3;
-  --color-sage-200: #d1d8c7;
-  --color-sage-300: #b3bfa3;
-  --color-sage-400: #95a67f;
-  --color-sage-500: #7a8d63;
-  --color-sage-600: #62724e;
-  --color-sage-700: #4d5a3e;
-  --color-sage-800: #404a35;
-  --color-sage-900: #363f2e;
-  --color-sage-950: #1c2218;
+  /* Static palette: Indigo */
+  --color-indigo-50: #f0f2f8;
+  --color-indigo-100: #dfe3ef;
+  --color-indigo-200: #bfc8df;
+  --color-indigo-300: #95a3ca;
+  --color-indigo-400: #6b7db5;
+  --color-indigo-500: #4f63a0;
+  --color-indigo-600: #3f5289;
+  --color-indigo-700: #354576;
+  --color-indigo-800: #2c3a63;
+  --color-indigo-900: #263150;
+  --color-indigo-950: #1e2438;
 
-  /* Static palette: Cream */
-  --color-cream-50: #fefdf8;
-  --color-cream-100: #fdf9ed;
-  --color-cream-200: #f9f0d3;
-  --color-cream-300: #f4e3b0;
+  /* Static palette: Sand */
+  --color-sand-50: #fefdf9;
+  --color-sand-100: #f9f6f0;
+  --color-sand-200: #f0ebe2;
+  --color-sand-300: #e0d9cf;
 
-  /* Static palette: Warm neutrals */
-  --color-warm-50: #faf8f5;
-  --color-warm-100: #f3efe8;
-  --color-warm-200: #e8e0d3;
-  --color-warm-300: #d4c7b3;
-  --color-warm-400: #c4a87c;
-  --color-warm-500: #a88c5c;
+  /* Static palette: Terracotta */
+  --color-terracotta-50: #fdf5f1;
+  --color-terracotta-100: #f8e7df;
+  --color-terracotta-200: #f0cebe;
+  --color-terracotta-300: #dba68e;
+  --color-terracotta-400: #c47a5a;
+  --color-terracotta-500: #a85e3e;
 
   /* Fonts */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -121,23 +121,23 @@
    ============================================ */
 @layer base {
   :root {
-    --background: 36 25% 94%;
-    --foreground: 0 0% 10%;
+    --background: 38 38% 94%;
+    --foreground: 226 30% 17%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-    --primary: 97 18% 47%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 36 28% 93%;
-    --secondary-foreground: 0 0% 31%;
-    --muted: 36 20% 95%;
-    --muted-foreground: 0 0% 43%;
-    --accent: 36 37% 63%;
-    --accent-foreground: 0 0% 10%;
+    --card-foreground: 226 30% 17%;
+    --primary: 225 37% 39%;
+    --primary-foreground: 38 38% 94%;
+    --secondary: 39 27% 90%;
+    --secondary-foreground: 226 20% 30%;
+    --muted: 39 32% 91%;
+    --muted-foreground: 224 9% 52%;
+    --accent: 18 47% 56%;
+    --accent-foreground: 38 38% 94%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 36 22% 88%;
-    --input: 36 22% 88%;
-    --ring: 97 18% 47%;
+    --border: 35 22% 85%;
+    --input: 35 22% 85%;
+    --ring: 225 37% 39%;
   }
 
 }
@@ -171,7 +171,7 @@
   }
 
   ::selection {
-    background-color: hsl(var(--primary) / 0.2);
+    background-color: hsl(var(--accent) / 0.2);
     color: hsl(var(--foreground));
   }
 }

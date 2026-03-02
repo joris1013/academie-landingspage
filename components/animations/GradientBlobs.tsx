@@ -27,8 +27,8 @@ export function GradientBlobs({
     >
       <div
         className={cn(
-          "absolute rounded-full opacity-20 blur-3xl dark:opacity-10",
-          "bg-sage-300 dark:bg-sage-600",
+          "absolute rounded-full opacity-20 blur-3xl",
+          "bg-indigo-300",
           "animate-blob",
           sizes[variant],
           variant === "hero" ? "-top-20 -left-20" : "top-0 left-1/4"
@@ -37,8 +37,8 @@ export function GradientBlobs({
 
       <div
         className={cn(
-          "absolute rounded-full opacity-20 blur-3xl dark:opacity-10",
-          "bg-warm-300 dark:bg-warm-500",
+          "absolute rounded-full opacity-20 blur-3xl",
+          "bg-terracotta-300",
           "animate-blob animation-delay-2000",
           sizes[variant],
           variant === "hero" ? "top-1/3 right-0" : "top-1/2 right-1/4"
@@ -47,8 +47,8 @@ export function GradientBlobs({
 
       <div
         className={cn(
-          "absolute rounded-full opacity-15 blur-3xl dark:opacity-5",
-          "bg-cream-200 dark:bg-sage-800",
+          "absolute rounded-full opacity-15 blur-3xl",
+          "bg-sand-200",
           "animate-blob animation-delay-4000",
           sizes[variant],
           variant === "hero"

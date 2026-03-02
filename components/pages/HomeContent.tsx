@@ -1,118 +1,28 @@
-import type { Metadata } from "next";
-import { HomeContent } from "@/components/pages/HomeContent";
-import { JsonLd } from "@/components/seo/JsonLd";
+"use client";
 
-const BASE_URL = "https://academie.nedanza.nl";
+import { SectionReveal } from "@/components/animations/SectionReveal";
+import { TextReveal } from "@/components/animations/TextReveal";
+import { PageTransition } from "@/components/animations/PageTransition";
+import { NEDANZA_MAIN_SITE } from "@/lib/constants";
+import {
+  GraduationCap,
+  Users,
+  Heart,
+  ArrowRight,
+  FileText,
+  BookOpen,
+  CheckCircle,
+  Quote,
+  LogIn,
+} from "lucide-react";
 
-const pageMetadata: Record<string, { title: string; description: string }> = {
-  nl: {
-    title: "Welkom bij de Nedanza Academie",
-    description:
-      "Nedanza Academie: opleidingen in systemische hulpverlening, het Exodus Model en contactuele therapie. Voor behandelaren in de GGZ die zich willen verdiepen.",
-  },
-  en: {
-    title: "Welcome to the Nedanza Academy",
-    description:
-      "Nedanza Academy: training in systemic therapy, the Exodus Model and contactual therapy. For mental health practitioners seeking advanced development.",
-  },
-};
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const meta = pageMetadata[locale] ?? pageMetadata.nl;
-  const localePath = locale === "nl" ? "" : `/${locale}`;
-
-  return {
-    title: meta.title,
-    description: meta.description,
-    openGraph: {
-      title: meta.title,
-      description: meta.description,
-      url: `${BASE_URL}${localePath}`,
-    },
-    alternates: {
-      canonical: `${BASE_URL}${localePath}`,
-      languages: {
-        nl: BASE_URL,
-        en: `${BASE_URL}/en`,
-        "x-default": BASE_URL,
-      },
-    },
-  };
-}
-
-const coursesJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Opleidingen Nedanza Academie",
-  numberOfItems: 3,
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      item: {
-        "@type": "Course",
-        name: "Vervolgmodule Systemische Hulpverlening",
-        description:
-          "Opleiding in systemische hulpverlening: leren denken en handelen vanuit samenhang, patronen en loyaliteiten in relaties.",
-        provider: {
-          "@type": "EducationalOrganization",
-          name: "Nedanza Academie",
-          url: BASE_URL,
-        },
-        inLanguage: "nl",
-        url: `${BASE_URL}/#systeemtherapie`,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      item: {
-        "@type": "Course",
-        name: "Opleiding Exodus Model",
-        description:
-          "Het Exodus Model beschrijft hoe mensen in gesloten systemen manieren ontwikkelen om te blijven bestaan en hoe beweging mogelijk wordt.",
-        provider: {
-          "@type": "EducationalOrganization",
-          name: "Nedanza Academie",
-          url: BASE_URL,
-        },
-        inLanguage: "nl",
-        url: `${BASE_URL}/#exodus-model`,
-      },
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      item: {
-        "@type": "Course",
-        name: "Contactuele Therapie",
-        description:
-          "Opleiding in contactuele therapie: vertrouwd geraken met de eigen binnenwereld en jezelf als instrument leren gebruiken.",
-        provider: {
-          "@type": "EducationalOrganization",
-          name: "Nedanza Academie",
-          url: BASE_URL,
-        },
-        inLanguage: "nl",
-        url: `${BASE_URL}/#contactuele-therapie`,
-      },
-    },
-  ],
-};
-
-export default function AcademiePage() {
+export function HomeContent() {
   return (
-<<<<<<< Updated upstream
     <PageTransition>
-      {/* ═══════════════════════════════════════════
-          HERO
-      ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden pb-16 pt-32 sm:pb-24 sm:pt-44">
+      <section
+        aria-label="Hero"
+        className="relative overflow-hidden pb-16 pt-32 sm:pb-24 sm:pt-44"
+      >
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-primary/8 blur-3xl" />
@@ -126,19 +36,19 @@ export default function AcademiePage() {
               </span>
             </div>
           </SectionReveal>
-          <div>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
             <TextReveal
               text="Welkom bij de"
-              as="h1"
-              className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
+              as="span"
+              className="block text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
             />
             <TextReveal
               text="Nedanza Academie"
-              as="h1"
-              className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
+              as="span"
+              className="block text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
               delay={0.12}
             />
-          </div>
+          </h1>
           <SectionReveal delay={0.3}>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
               Het opleidings- en verdiepingscentrum van Nedanza Psychologen
@@ -147,7 +57,7 @@ export default function AcademiePage() {
           <SectionReveal delay={0.45}>
             <div className="mt-10">
               <a
-                href="https://nedanza-portaal.nl/"
+                href="https://nedanza-academie.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
@@ -160,11 +70,9 @@ export default function AcademiePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          INTRODUCTIE
-      ═══════════════════════════════════════════ */}
       <section
         id="introductie"
+        aria-label="Over de Academie"
         className="scroll-mt-24 border-t border-border/30 py-16 sm:py-20"
       >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -223,7 +131,7 @@ export default function AcademiePage() {
                 betrokkenheid, zelfonderzoek en gezamenlijke reflectie.
               </p>
 
-              <div className="mt-8 border-l-2 border-primary/25 pl-6">
+              <div className="mt-8 border-l-2 border-accent/40 pl-6">
                 <p className="font-serif text-lg italic text-foreground/80">
                   De Nedanza Academie is een plek om te vertragen, te verdiepen
                   en te leren zien &mdash; in jezelf, in de ander en in wat zich
@@ -235,10 +143,10 @@ export default function AcademiePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          CURSUSOVERZICHT
-      ═══════════════════════════════════════════ */}
-      <section className="border-t border-border/30 py-16 sm:py-20">
+      <section
+        aria-label="Cursusoverzicht"
+        className="border-t border-border/30 py-16 sm:py-20"
+      >
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <SectionReveal>
             <h2 className="mb-4 text-center font-serif text-3xl font-bold text-foreground">
@@ -299,11 +207,9 @@ export default function AcademiePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          MODULE 1 – SYSTEMISCHE HULPVERLENING
-      ═══════════════════════════════════════════ */}
       <section
         id="systeemtherapie"
+        aria-label="Systemische Hulpverlening"
         className="scroll-mt-24 border-t border-border/30 py-16 sm:py-20"
       >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -328,8 +234,8 @@ export default function AcademiePage() {
 
           <SectionReveal delay={0.1}>
             <div className="mt-8 rounded-2xl border border-primary/20 bg-primary/5 p-8 md:p-10">
-              <div className="mb-8 border-l-2 border-primary/30 pl-6">
-                <Quote className="mb-3 h-5 w-5 text-primary/50" />
+              <div className="mb-8 border-l-2 border-accent/40 pl-6">
+                <Quote className="mb-3 h-5 w-5 text-accent/50" />
                 <p className="font-serif text-lg italic text-foreground/90">
                   &ldquo;Dit boven alles: wees trouw aan jezelf.
                   <br />
@@ -387,11 +293,9 @@ export default function AcademiePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          MODULE 2 – EXODUS MODEL
-      ═══════════════════════════════════════════ */}
       <section
         id="exodus-model"
+        aria-label="Exodus Model"
         className="scroll-mt-24 border-t border-border/30 py-16 sm:py-20"
       >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -416,8 +320,8 @@ export default function AcademiePage() {
 
           <SectionReveal delay={0.1}>
             <div className="mt-8 rounded-2xl border border-primary/20 bg-primary/5 p-8 md:p-10">
-              <div className="mb-8 border-l-2 border-primary/30 pl-6">
-                <Quote className="mb-3 h-5 w-5 text-primary/50" />
+              <div className="mb-8 border-l-2 border-accent/40 pl-6">
+                <Quote className="mb-3 h-5 w-5 text-accent/50" />
                 <p className="font-serif text-lg italic text-foreground/90">
                   &ldquo;Als je in beweging komt, doe je altijd iemand anders
                   pijn.&rdquo;
@@ -483,11 +387,9 @@ export default function AcademiePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          MODULE 3 – CONTACTUELE THERAPIE
-      ═══════════════════════════════════════════ */}
       <section
         id="contactuele-therapie"
+        aria-label="Contactuele Therapie"
         className="scroll-mt-24 border-t border-border/30 py-16 sm:py-20"
       >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -524,12 +426,10 @@ export default function AcademiePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          TOELATING EN AANNAMEBELEID
-      ═══════════════════════════════════════════ */}
       <section
         id="toelating"
-        className="scroll-mt-24 border-t border-border/30 py-16 sm:py-20 pb-20"
+        aria-label="Toelating en aannamebeleid"
+        className="scroll-mt-24 border-t border-border/30 py-16 pb-20 sm:py-20"
       >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <SectionReveal>
@@ -607,10 +507,10 @@ export default function AcademiePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          CTA
-      ═══════════════════════════════════════════ */}
-      <section className="border-t border-border/30 py-16 sm:py-20">
+      <section
+        aria-label="Contact"
+        className="border-t border-border/30 py-16 sm:py-20"
+      >
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <SectionReveal>
             <div className="rounded-2xl border border-primary/20 bg-primary/5 p-8 md:p-12">
@@ -624,13 +524,13 @@ export default function AcademiePage() {
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <a
                   href={`${NEDANZA_MAIN_SITE}/contact`}
-                  className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary/50"
+                  className="inline-flex items-center gap-2 rounded-lg border border-accent/40 px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent/5"
                 >
                   Neem contact op
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://nedanza-portaal.nl/"
+                  href="https://nedanza-academie.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
@@ -644,11 +544,5 @@ export default function AcademiePage() {
         </div>
       </section>
     </PageTransition>
-=======
-    <>
-      <JsonLd data={coursesJsonLd} />
-      <HomeContent />
-    </>
->>>>>>> Stashed changes
   );
 }

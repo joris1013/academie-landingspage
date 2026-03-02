@@ -35,11 +35,11 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "bg-background/90 backdrop-blur-xl shadow-sm border-b border-border/50"
+            ? "bg-background/90 backdrop-blur-xl shadow-sm shadow-primary/5 border-b border-primary/10"
             : "bg-transparent"
         )}
       >
-        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
+        <nav aria-label="Hoofdnavigatie" className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex shrink-0 items-center">
               <Image
@@ -66,7 +66,7 @@ export function Navbar() {
               <a
                 key={section.id}
                 href={sectionHref(section.id)}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground hover:bg-secondary/50"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-accent hover:bg-accent/5"
               >
                 {section.label}
               </a>
@@ -125,13 +125,13 @@ export function Navbar() {
                   </button>
                 </div>
                 <div className="flex-1 overflow-y-auto p-4">
-                  <nav className="space-y-1">
+                  <nav aria-label="Mobiele navigatie" className="space-y-1">
                     {ACADEMY_SECTIONS.map((section) => (
                       <a
                         key={section.id}
                         href={sectionHref(section.id)}
                         onClick={() => setMobileOpen(false)}
-                        className="block rounded-lg px-3 py-3 text-sm font-medium text-foreground hover:bg-secondary/50"
+                        className="block rounded-lg px-3 py-3 text-sm font-medium text-foreground hover:text-accent hover:bg-accent/5"
                       >
                         {section.label}
                       </a>
