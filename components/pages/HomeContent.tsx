@@ -57,7 +57,7 @@ export function HomeContent() {
           <SectionReveal delay={0.45}>
             <div className="mt-10">
               <a
-                href="https://nedanza-academie.vercel.app/"
+                href="https://nedanza-academie.nl/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
@@ -530,7 +530,7 @@ export function HomeContent() {
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://nedanza-academie.vercel.app/"
+                  href="https://nedanza-academie.nl/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
