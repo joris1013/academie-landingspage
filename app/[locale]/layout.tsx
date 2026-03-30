@@ -126,6 +126,9 @@ export async function generateMetadata({
         "max-snippet": -1,
       },
     },
+    other: {
+      "color-scheme": "light only",
+    },
   };
 }
 
@@ -172,6 +175,7 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${inter.variable} ${playfair.variable}`}
       data-scroll-behavior="smooth"
+      style={{ colorScheme: "light only" }}
     >
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <JsonLd data={organizationJsonLd} />

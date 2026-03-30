@@ -121,6 +121,7 @@
    ============================================ */
 @layer base {
   :root {
+    color-scheme: light only;
     --background: 38 38% 94%;
     --foreground: 226 30% 17%;
     --card: 0 0% 100%;
