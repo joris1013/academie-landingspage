@@ -2,7 +2,7 @@
 
 Landing page for [Nedanza Academie](https://academie.nedanza.nl) — the training and specialisation centre of Nedanza Psychologen, offering courses in systemic therapy, the Exodus Model and contactual therapy for mental-health practitioners.
 
-## Tech Stack
+### Tech Stack
 
 - **Framework** — [Next.js 16](https://nextjs.org/) (App Router, Turbopack)
 - **Language** — TypeScript
